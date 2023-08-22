@@ -1,0 +1,78 @@
+<!--Vista Principal-->
+<div >
+<header>
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/21/21577.png"
+        alt="Logo"
+        width="30"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+      PUPI DOG
+    </a>
+  </div>
+</nav>
+  <!-- Background image -->
+  <div
+    class="p-5  bg-image"
+    style="
+      background-image: url('https://st4.depositphotos.com/3917667/27426/i/450/depositphotos_274269746-stock-photo-creative-collage-of-different-breeds.jpg');
+      height: 150;">
+  </div>
+  <!-- Background image -->
+</header>
+<h2 class="text-center py-4 fst-italic">TABLA DE NOMBRE DE RAZAS DE PERROS</h2>
+<div class="container heigh-container">
+  
+  <table class="table table-hover table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">ID</th>
+        <th>Imagen de la raza</th>
+        <th scope="col">Nombre de la raza</th>
+        <th scope="col">Cantidad de perros inscritos:</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let breed of razaCantidad; let i = index">
+        <th scope="row">
+          <p class="fst-italic">{{ i + 1 }}</p>
+        </th>
+        <td>
+          <img [src]="breed.url" width="160" height="100" class="dog-image" />
+        </td>
+        <td>
+          {{ breed.raza }}
+        </td>
+        <td>
+          <p class="fst-italic">{{ breed.cantidad }}</p>
+        </td>
+        <td>
+          <button
+            class="btn btn-primary me-2"
+            type="button"
+            [routerLink]="getrouterLink(breed.raza, breed.url)"
+          >
+            Agregar
+          </button>
+
+          <button class="btn btn-success" (click)="lista()">Listar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<footer class="text-center text-white " style="background-color: #21081a;">
+ 
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-white" href="https://github.com/Marce202110">Maria Celedon</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</div>

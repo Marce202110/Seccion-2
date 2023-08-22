@@ -1,0 +1,50 @@
+<nav class="navbar">
+  <div class="container-fluid-center">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/21/21577.png"
+        alt="Logo"
+        width="30"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+      PUPI DOG
+    </a>
+  </div>
+</nav>
+<div class="container text-center">
+  <h2 class="py-4 fst-italic">Agregar un perro</h2>
+  <div class="card mx-auto" style="width: 50%">
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted">
+        Raza del perro: {{ dogName }}
+      </h6>
+      <img [src]="dogUrl" class="my-4" width="200" style="border-radius: 1em" />
+      <form [formGroup]="dogForm">
+        <div class="row">
+          <div class="col-6">
+            <label>Nombre del perro</label>
+            <input type="text" formControlName="nombre" class="form-control" />
+          </div>
+          <div class="col-6">
+            <label>Fecha de nacimiento</label>
+            <input
+              type="date"
+              formControlName="fechaNacimiento"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 py-4 d-flex justify-content-end">
+            <button
+              class="btn btn-primary px-4"
+              [disabled]="!validForm"
+              [routerLink]="['/home']"
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
